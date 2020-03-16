@@ -14,3 +14,6 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/weather', 'WeatherController@index')->name('weather');
+Route::post('/weather', 'WeatherController@weather');
