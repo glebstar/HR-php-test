@@ -15,10 +15,8 @@
     </div>
 
     <script src="/js/app.js"></script>
-    <script src="/js/script.js?v=2"></script>
+    <script src="/js/script.js?v=3"></script>
 <script>
-    let csrf_token = '{{ csrf_token() }}';
-
     setInterval(getTemperature(), 300000); // обновляем раз в пять минут
 </script>
 </body>

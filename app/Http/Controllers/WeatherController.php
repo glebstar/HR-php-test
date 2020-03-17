@@ -15,8 +15,9 @@ class WeatherController extends Controller
 
     public function getTemperature()
     {
-        $json = file_get_contents('http://api.openweathermap.org/data/2.5/weather?q=Bryansk&units=metric&appid=' . config('app.owm_api_key'));
-        $weather = json_decode($json);
+        // API заблокировано в некоторых местах роскомнадзором, из-за этого используется @
+        $json = @file_get_contents('http://api.openweathermap.org/data/2.5/weather?q=Bryansk&units=metric&appid=' . config('app.owm_api_key'));
+        $weather = @json_decode($json);
         if (isset($weather->main->temp)) {
             return $weather->main->temp;
         } else {
@@ -24,7 +25,7 @@ class WeatherController extends Controller
         }
     }
 
-    public function weather()
+    public function temp()
     {
         return response()->json([
             'temp' => $this->getTemperature(),

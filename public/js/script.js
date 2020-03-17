@@ -1,6 +1,6 @@
 function getTemperature()
 {
-    $.post('/weather', {_token: csrf_token}, function(data){
+    $.get('/temp', {}, function(data){
         $('#temp').html(data.temp);
     });
 }

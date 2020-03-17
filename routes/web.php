@@ -16,4 +16,4 @@ Route::get('/', function () {
 });
 
 Route::get('/weather', 'WeatherController@index')->name('weather');
-Route::post('/weather', 'WeatherController@weather');
+Route::get('/temp', 'WeatherController@temp');
